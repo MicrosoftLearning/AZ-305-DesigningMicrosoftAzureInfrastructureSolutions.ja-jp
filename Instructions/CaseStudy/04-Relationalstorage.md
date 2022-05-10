@@ -2,14 +2,16 @@
 casestudy:
   title: リレーショナル ストレージ ソリューションを設計する
   module: Relational storage solutions
-ms.openlocfilehash: 1e616b82df26e492ee943313758952f2ba7e68a6
-ms.sourcegitcommit: 2821f20a573854d6de4599a4edf7cb1bc0fe0ce1
+ms.openlocfilehash: e6b32b8c9e1bd89c21ca23154e2eb56658f7074b
+ms.sourcegitcommit: 0398c15157de2f621dd945e76523b824e500901c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "144556371"
+ms.lasthandoff: 02/23/2022
+ms.locfileid: "139134222"
 ---
 # <a name="design-relational-storage-case-study"></a>リレーショナル ストレージ ケース スタディを設計する
+
+予想所要時間: 90 分
 
 ## <a name="requirements"></a>要件
 
