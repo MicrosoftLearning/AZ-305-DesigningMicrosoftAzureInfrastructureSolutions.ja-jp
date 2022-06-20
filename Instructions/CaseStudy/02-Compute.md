@@ -2,16 +2,14 @@
 casestudy:
   title: コンピューティング ソリューションを設計する
   module: Compute solutions
-ms.openlocfilehash: 24c321a90580dda68ac749b69e985a31bc67092e
-ms.sourcegitcommit: 0398c15157de2f621dd945e76523b824e500901c
+ms.openlocfilehash: 5b17d7b5813935db70c7bdd3f07991aa3ba81d96
+ms.sourcegitcommit: 2821f20a573854d6de4599a4edf7cb1bc0fe0ce1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2022
-ms.locfileid: "139134201"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "144556380"
 ---
 # <a name="design-a-compute-solution"></a>コンピューティング ソリューションを設計する
-
-予想所要時間: 90 分
 
 ## <a name="requirements"></a>要件
 

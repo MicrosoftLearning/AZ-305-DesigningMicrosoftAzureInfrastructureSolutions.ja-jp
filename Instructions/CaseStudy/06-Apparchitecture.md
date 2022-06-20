@@ -2,16 +2,14 @@
 casestudy:
   title: アプリのアーキテクチャ ソリューションを設計する
   module: App architecture solutions
-ms.openlocfilehash: 78b1c861678ff255c4080978cbd7d02d46d58aca
-ms.sourcegitcommit: 0398c15157de2f621dd945e76523b824e500901c
+ms.openlocfilehash: 74d8456a5aef1053bcb7faf3990db764d147acba
+ms.sourcegitcommit: 2821f20a573854d6de4599a4edf7cb1bc0fe0ce1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2022
-ms.locfileid: "139134218"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "144556392"
 ---
 # <a name="design-an-app-architecture-solution"></a>アプリのアーキテクチャ ソリューションを設計する
-
-予想所要時間: 90 分
 
 ## <a name="requirements"></a>要件
 
