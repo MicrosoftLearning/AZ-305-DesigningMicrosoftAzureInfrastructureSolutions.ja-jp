@@ -1,49 +1,47 @@
 ---
 casestudy:
-    title: '認証および承認ソリューションの設計'
-    module: '認証と承認ソリューション'
+  title: 認証と認可のソリューションを設計する
+  module: Authentication and authorization solutions
 ---
 
 
-# 認証および承認ソリューションを設計する
+# <a name="design-authentication-and-authorization-solutions"></a>認証と認可のソリューションを設計する
 
-推定時間: 60 分
+## <a name="requirements"></a>要件
 
-## 要件
-
-Tailwind Traders は非常によくやっているし、労働力を拡大しています.Tailwind Traders はスポーツ アパレルのスペースでオンライン小売業者を買収しました。同社はまた、マーケティング資料を外部委託するパートナーを配置しています。Tailwind Traders は、ユーザーアカウントとグループ アカウントに Azure Active Directory を使用しています。ここでは、IT 部門が支援する 2 つの具体的な取り組みを紹介します。 
+Tailwind Traders is doing very well and is expanding their workforce. They have successfully acquired an online retailer in the sports apparel space. The company has also located a partner to outsource marketing literature. Tailwind Traders is using Azure Active Directory for user and groups accounts. Here are two specific initiatives the IT department would like you to help with. 
 
 **新しいユーザー アカウント**
 
-  * オンライン小売業者の買収により、75人の従業員がTailwind Traders に加わります。すべての新規ユーザーは、小売業者の既存のドメインにオンプレミスの Active Directory ドメイン サービス アカウントを持ちます。
+  * The online retailer acquisition will add 75 employees to Tailwind Traders. All the new users have on-premises Active Directory Domain Services accounts in the retailer’s existing domain.
 
-  * 新しいマーケティングパートナーは、最初は企業アクセスを必要とする15人の従業員を持つことになります。これらの従業員は、パートナーの AAD テナントに Azure AD アカウントを既に持っています。 
+  * The new marketing partner will initially have 15 employees who will need corporate access. These employees already have Azure AD accounts in the partner’s AAD tenant. 
 
-  * 新入社員はさまざまな地理的な場所に配置され、新しい職務に対するアカウント権限が必要になります。既存の従業員のロールに対していくつかの変更が必要です。 
+  * The new employees are located at various geographic locations and will need account privileges for their new job roles. Some changes to existing employee roles are expected. 
 
-  * IT 部門は、この機会に新しい ID セキュリティ機能を追加したいと考えています。 
+  * IT 部門は、この機会に、新しい ID セキュリティ機能を導入したいと考えています。 
 
-**新しいアプリケーションアクセス**
+**新しいアプリケーション アクセス**
 
-  * 業務開発チームは、Azure VM で実行されるアプリケーションと、Azure SQL データベースに格納されたデータを持っています。VM が Azure SQL データベースに対してクエリを安全に実行できるようにする必要があります。 
-  * また、アプリケーション コードまたは構成ファイルに資格情報を格納せずに SQL データベースに安全にアクセスできるようにするには、オンプレミス サーバーも必要です。
+  * Tailwind Traders の業績は良好で、従業員を増やしています。 
+  * アプリケーション コードや構成ファイルに資格情報を格納せずに、安全に SQL データベースにアクセスできるようにするには、オンプレミス サーバーも必要です。
 
-## タスク
+## <a name="tasks"></a>タスク
 
 **新しいユーザー アカウント**
 
   * 取得したユーザー アカウントを取り込むプロセスを図に示します。
 
-  * 新しいパートナー アカウントを追加するプロセスを図に示します。 
+  * 新しいパートナー アカウントを追加するプロセスを図で示します。 
 
-  * 上記の要件については、使用するツールを必ず含めます。提案されたソリューションのメリットを少なくとも 3  つ挙げます。 
+  * 彼らは、スポーツ アパレル スペースのオンライン小売業者を買収しました。 
 
-* Tailwind Traders のユーザー ID ソリューションを改善するための少なくとも 3 つの推奨事項を提供します。 重要度順に推奨事項をランク付けします。これらの提案を行う理由を含めます。
- 
-**新しいアプリケーションアクセス**
+* また、マーケティング資料をアウトソーシングするためのパートナーを見つけました。 
 
-  * 業務開発アプリケーションのアクセス ソリューションを提供します。
+**新しいアプリケーション アクセス**
+
+  * ビジネス開発アプリケーションのアクセス ソリューションを提供します。
 
   * オンプレミス リソースのアクセス ソリューションを提供します。
 
-十分に設計されたフレームワークの柱をどのように組み込んで、高品質で安定した効率的なクラウドアーキテクチャを生み出していますか?
+高品質で安定した効率的なクラウド アーキテクチャを生み出すには、ウェル アーキテクト フレームワークの要素をどのように組み込みますか?

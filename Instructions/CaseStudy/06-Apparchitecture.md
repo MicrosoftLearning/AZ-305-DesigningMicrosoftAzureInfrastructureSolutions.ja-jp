@@ -1,24 +1,21 @@
 ---
 casestudy:
-    title: 'アプリのアーキテクチャ ソリューションの設計'
-    module: 'アプリ アーキテクチャ ソリューション'
+  title: アプリのアーキテクチャ ソリューションを設計する
+  module: App architecture solutions
 ---
-# アプリのアーキテクチャ ソリューションを設計する
+# <a name="design-an-app-architecture-solution"></a>アプリのアーキテクチャ ソリューションを設計する
 
-推定時間: 90 分
+## <a name="requirements"></a>要件
 
-## 要件
+Tailwind Traders is looking to update their website to include customer supplied product images in addition to the already existing photos provided by marketing. They believe that having more photos of products in use will give potential customers a better feel for how past customers loved their products after purchasing them. They do have some requirements as outlined below:
 
-Tailwind Traders は、マーケティングによって提供されている既存の写真に加えて、顧客が提供する製品画像を含むようにウェブサイトを更新しようとしています。Tailwind Traders は、使用中の製品の写真を増やしたことで、購入後に過去の顧客が製品をどのように愛していたかについて、潜在的な顧客がより良い感触を得ると考えています。
-以下に概説する必須要件がいくつかあります
+* Uploaded images will need to be scanned before getting posted on the website. Legal and Marketing are both requesting that after initial upload, the images be checked for any issues that reflect poorly upon the company or could cause legal issues. An in-house API has already been developed and deployed that can perform the necessary scanning. 
 
-* アップロードされた画像は、ウェブサイトに掲載される前にスキャンする必要があります。法律とマーケティングの両面で、最初のアップロード後に、画像が会社に十分に反映されていない問題がないか、法的な問題を引き起こす可能性のある問題がないかチェックすることを要求しています。社内 API では、必要なスキャンを実行できる開発とデプロイが既に行われています。 
+* Based on existing patterns, Tailwind Traders expects the image uploads to happen very unevenly throughout the day. Certain periods may experience more uploads than the scanning software can handle, while other periods may experience very few or no uploads.
 
-* 既存のパターンに基づいて、Tailwind Traders は、画像のアップロードが一日を通して非常に不均等に起こることを期待しています。特定の期間は、スキャンソフトウェアが処理できるよりも多くのアップロードが発生する可能性がありますが、他の期間はアップロードが非常に少ないかまったく発生しない可能性があります。
+* Tailwind Traders は、アップロードされた画像がシステムによってスキャンされ、承認された後、画像の共有に対するお礼のメールをお客様に送信したいと考えています。
 
-* アップロードされた画像がシステムによってスキャンされ、承認されると、 Tailwind Traders は、顧客に画像を共有してくれたことに感謝するメールを送信したいと考えています。
-
-* 特に、この機能が最初にどの程度人気が高いかは分からないので、ソリューションのコストと管理が懸念されます。可能な限り、コストを最小限に抑え、サーバーレスソリューションを活用します。
+* Cost and management of the solution is a concern, especially since Tailwind Traders isn’t sure how popular this feature will be initially. Minimize costs and leverage serverless solutions where possible.
 
  
 
@@ -26,16 +23,16 @@ Tailwind Traders は、マーケティングによって提供されている既
 
  
 
-## タスク​​
+## <a name="task"></a>タスク
 
-顧客の画像を会社のウェブサイトに追加するためのアーキテクチャを設計します。 
+会社の Web サイトに追加されるお客様の画像を対象とするアーキテクチャを設計します。 
 
-* 画像はどこに保存する必要がありますか?
+* 画像はどこに格納する必要がありますか?
 
-* アップロードがスキャンを上回っている場合でも、すべての画像が確実にスキャンされるようにするにはどうすればよいでしょうか?
+* アップロードがスキャンを上回っている場合でも、すべての画像が確実にスキャンされるようにするには、どうすればよいですか?
 
-* 画像が承認され、カタログ データベースが更新されると、顧客に通知する方法は? 
+* 画像が承認され、カタログ データベースが更新された後、お客様への通知はどのように行われますか? 
 
-十分に設計されたフレームワークの柱をどのように組み込んで、高品質で安定した効率的なクラウドアーキテクチャを生み出していますか?
+高品質で安定した効率的なクラウド アーキテクチャを生み出すには、ウェル アーキテクト フレームワークの要素をどのように組み込みますか?
 
  

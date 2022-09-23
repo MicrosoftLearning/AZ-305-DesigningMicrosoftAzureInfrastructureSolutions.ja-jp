@@ -1,37 +1,34 @@
 ---
 casestudy:
-    title: 'ガバナンス ソリューションの設計'
-    module: 'ガバナンス ソリューション'
+  title: ガバナンス ソリューションを設計する
+  module: Governance solutions
 ---
 
-# ガバナンス ソリューションを設計する
+# <a name="design-a-governance-solution"></a>ガバナンス ソリューションを設計する
 
-推定時間: 90 分
+## <a name="requirements"></a>要件
 
-## 要件
+Tailwind Traders is planning on making some significant changes to their governance solution. They have asked for your assistance with recommendations and questions. Here are the specific requirements.
 
-Tailwind Traders は、ガバナンスソリューションにいくつかの重要な変更を加えることを計画しています。
-同社は、推奨事項や質問に対する支援を求めています。要件の詳細を以下に示します。
+* <bpt id="p1">**</bpt>Cost and accounting<ept id="p1">**</ept>. Tailwind Traders has two main business units that handle Apparel and Sporting Goods. Each of the business units consist of three departments: Product Development, Marketing, and Sales. Each business unit and subunit will be responsible for tracking their Azure spend. At the same time, the Enterprise IT team will be responsible for providing company-wide Azure cost reporting.
 
-* **原価計算**。Tailwind Traders には、アパレルとスポーツ用品を扱う 2 つの主要な事業部があります。各ビジネス ユニットは、3 つの部門(製品開発、マーケティング、営業) で構成されます。各ビジネス ユニットとサブユニットは、Azure の使用状況を追跡する責任を負います。同時に、エンタープライズ IT チームは、全社的  Azure 原価報告書の提供を担当します。
+* <bpt id="p1">**</bpt>New development project<ept id="p1">**</ept>. The company has a new development project for customer feedback. The CFO wants to ensure all costs associated with the project are captured. For the testing phase, workloads should be hosted on lower cost virtual machines. The virtual machines should be named to indicate they are part of the project. Any instances of non-compliance with resource consistency rules should be automatically identified.
 
-* **新しい開発プロジェクト**。会社には、顧客フィードバックを担当する新しい開発プロジェクトがあります。CFO は、プロジェクトがキャプチャする関連するすべてのコストを確認したいと考えています。テストフェーズでは、ワークロードは低費用の仮想マシンでホストする必要があります。仮想マシンには、プロジェクトの一部であることを示す名前を付ける必要があります。リソース整合性規則に準拠していないインスタンスを自動的に特定する必要があります。
+## <a name="tasks"></a>タスク
 
-## タスク
+1. **コストと会計** 
 
-1. **原価計算** 
+    * What are different ways Tailwind Traders could organize their subscriptions and management groups. Which would be the best to meet their requirements? 
 
-    * Tailwind Traders 社が、そのサブスクリプションおよび管理グループを整理できるさまざまな方法を説明してください。その要件を満たす最高の方法はどれですか? 
-
-    * 2 つの代替階層を定義して、意思決定プロセスを説明してください。
+    * 2 つの代替階層を設計し、意思決定プロセスを説明します。
 
 2. **新しい開発プロジェクト** 
 
-    * Tailwind Traders が新しい開発プロジェクトの費用を追跡できるさまざまな方法は何ですか?
+    * Tailwind Traders が新しい開発プロジェクトのコストを追跡するためのさまざまな方法とは、どのような方法ですか?
 
-    * 仮想マシンのサイズと命名に関する要件について、コンプライアンスをどのように確認しますか? 
+    * 仮想マシンのサイズ設定と名前付けの要件を、どのように満たしますか? 
 
-    * 要件を満たすための方法を少なくとも 2 つ提案してください。最終的な意思決定を説明します。 
+    * Tailwind Traders 社は、ガバナンス ソリューションについて大きな変更を行う予定です。 
 
-十分に設計されたフレームワークの柱をどのように組み込んで、高品質で安定した効率的なクラウドアーキテクチャを生み出していますか?
+高品質で安定した効率的なクラウド アーキテクチャを生み出すには、ウェル アーキテクト フレームワークの要素をどのように組み込みますか?
 

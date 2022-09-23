@@ -1,33 +1,31 @@
 ---
 casestudy:
-    title: 'コンピューティング ソリューションの設計'
-    module: 'コンピューティング ソリューション'
+  title: コンピューティング ソリューションを設計する
+  module: Compute solutions
 ---
 
-# コンピューティング ソリューションを設計する
+# <a name="design-a-compute-solution"></a>コンピューティング ソリューションを設計する
 
-推定時間: 90 分
+## <a name="requirements"></a>要件
 
-## 要件
-
-Tailwind Tradersは、製品カタログのアプリケーションをクラウドに移行したいと考えています。このアプリケーションには、データ ストアとして SQL Server を使用する従来の 3 層構成があります。IT チームは、アプリケーションの最新化に役立つことを期待しています。Tailwind Tradersは、この図と改善できるいくつかの領域を提供しています。 
+Tailwind Traders would like to migrate their product catalog application to the cloud. This application has a traditional 3-tier configuration using SQL Server as the data store. The IT team hopes you can help modernize the application. They have provided this diagram and several areas that could be improved. 
 
 ![コンピューティング アーキテクチャ](media/compute.png)
 
-* フロントエンド アプリケーションは、.NET コア ベースの Web アプリです。ピーク時には、毎時1750人の顧客がウェブサイトを訪れます。 
+* The frontend application is a .NET core-based web app. During peak periods 1750 customers visit the website each hour. 
 
-* アプリケーションは、フロントエンド層の IIS Web サーバー上で実行されます。この層は、製品の購入に関するすべての顧客要求を処理します。最新のホリデーセールでは、フロントエンド サーバーのパフォーマンスの制限に達し、ページの読み込みが長くなりました。IT チームは、サーバーの追加を検討しましたが、オフの時間帯にはサーバーがアイドル状態になることが多いです。
+* The application runs on IIS web servers in a front-end tier. This tier handles all customer requests for purchasing products. During the latest holiday sale, the front-end servers reached their performance limits and page loads were lengthy. The IT team has considered adding more servers, but during off hours the servers are often idle.
 
-* 中間層は、顧客の要求を処理するビジネス ロジックをホストします。これらの要求は、頻繁にヘルプ デスクのサポートを必要とします。サポート要求はキューに入れられており、最近は待ち時間が非常に長くなっています。顧客には、担当者を待つのではなく、電子メールが送信されます。しかし、多くの顧客は不満を抱いているようで、待つのではなく切断しています。顧客の要求は、 1 時間あたり 75～125 です。 
+* The middle tier hosts the business logic that processes customer requests. These requests are often for help desk support. Support requests are queued and lately the wait times have been very long. Customers are offered email rather than wait for a representative. But many customers seem frustrated and are disconnecting rather than wait. Customer requests are 75-125 per hour. 
 
-* バックエンド層は、顧客の発注を格納するために SQL Server データベースを使用します。現在、バックエンド データベース サーバーは良好なパフォーマンスを発揮しています。
+* Tailwind Traders は、自社の製品カタログ アプリケーションをクラウドに移行させたいと考えています。
 
-* 高可用性が懸念されますが、法的要件のために、会社はすべてのリソースを単一のリージョンに保持する必要があります。
+* 高可用性の懸念はありますが、法的要件により、会社はすべてのリソースを 1 つのリージョンに保持する必要があります。
 
-## タスク
+## <a name="tasks"></a>タスク
 
-* **フロントエンド層**。フロントエンド階層には、どの Azure コンピューティング サービスを推奨しますか? ソリューションを決定した理由を説明します。 
+* このアプリケーションは、従来の 3 層構成であり、データ ストアとして SQL Server が使用されています。 
 
-* **中間層**。中間層に推奨する Azure コンピューティング サービスはどれですか? ソリューションを決定した理由を説明します。 
+* IT チームがあなたに期待するのは、アプリケーションの最新化に向けたサポートです。 
 
-十分に設計されたフレームワークの柱をどのように組み込んで、高品質で安定した効率的なクラウドアーキテクチャを生み出していますか?
+高品質で安定した効率的なクラウド アーキテクチャを生み出すには、ウェル アーキテクト フレームワークの要素をどのように組み込みますか?

@@ -1,28 +1,26 @@
 ---
 casestudy:
-    title: 'リレーショナル ストレージ ソリューションの設計'
-    module: 'リレーショナル ストレージ ソリューション'
+  title: リレーショナル ストレージ ソリューションを設計する
+  module: Relational storage solutions
 ---
-# リレーショナル ストレージ の ケース スタディを設計する
+# <a name="design-relational-storage-case-study"></a>リレーショナル ストレージ ケース スタディを設計する
 
-推定時間: 90 分
+## <a name="requirements"></a>要件
 
-## 要件
+Tailwind Traders is looking to move their existing public website database into Azure, as the website front end is being moved there as well.  The website front end will initially only be deployed in 2 regions for redundancy.  However, it is expected that as traffic increases the website will be replicated to other regions around the world. The database, which you are being asked to migrate, holds the product catalog, and all online orders.  Currently the database runs on a single Microsoft SQL Server Always On availability group on premises.
 
-Tailwind Traders は、ウェブサイトのフロント エンドもそこに移動しているので、既存のパブリック ウェブサイト データベースを Azure に移動しようとしています。  ウェブサイトのフロント エンドは、冗長性を確保するために、最初は 2 つのリージョンにのみ展開されます。  しかし、トラフィックが増加するにつれて、ウェブサイトは世界中の他の地域に複製されると予想されます。移行を求められるデータベースには、製品カタログとすべてのオンライン注文が格納されます。  現在、データベースはオンプレミスの単一の SQL Server Always On の可用性グループで実行されています。
+Tailwind Traders の主な懸念事項は次のとおりです。
 
-Tailwind Traders の主な関心事項:
+-   <bpt id="p1">**</bpt>High availability.<ept id="p1">**</ept>  A primary concern for Tailwind Traders is that this database be highly available as it is critical to their business.  Any outages may result in lost sales or customer confidence.
 
--       **高可用性。**  Tailwind Traders の主な関心事項として、このデータベースがビジネスにとって重要であるため、高可用性を備えています。  停止により、売上や顧客の信頼を失う可能性があります。
+-   <bpt id="p1">**</bpt>Website performance.<ept id="p1">**</ept>  While the performance of placing orders is normally satisfactory, browsing or searching pages with many items listed is reported as being “sluggish.”
 
--	**ウェブサイトのパフォーマンス。**  注文のパフォーマンスは通常満足を得ている一方、多数の項目がリストされているページを閲覧または検索することは「非常に遅い」と報告されます。
-
--	**セキュリティ。**  Tailwind Traders は、公開されているデータベースに格納されている個人情報や財務情報を非常に懸念しています。  セキュリティ チームは、適切なセキュリティ対策を実装するだけでなく、可能な場合に業界標準のベスト プラクティスが実装されていることを確認する必要があります。
+-   <bpt id="p1">**</bpt>Security.<ept id="p1">**</ept>  Tailwind Traders is very concerned about personal or financial information stored in the database being exposed.  In addition to implementing proper security measures, the security team needs to verify that industry standard best practices are implemented, when possible.
 
 
-## タスク
+## <a name="tasks"></a>タスク
 
-1.	データベース ソリューションを設計します。設計には、承認、認証、価格設定、パフォーマンス、高可用性を含める必要があります。 
-2.	ソリューションを決定および説明するための図。 
+1.  Tailwind Traders は、既存のパブリック Web サイト データベースを Azure に移動させることを検討しています。Web サイトのフロント エンドも、そこに移動されているためです。 
+2.  決定した内容を図に示し、ソリューションについて説明します。 
 
-十分に設計されたフレームワークの柱をどのように組み込んで、高品質で安定した効率的なクラウドアーキテクチャを生み出していますか?
+高品質で安定した効率的なクラウド アーキテクチャを生み出すには、ウェル アーキテクト フレームワークの要素をどのように組み込みますか?

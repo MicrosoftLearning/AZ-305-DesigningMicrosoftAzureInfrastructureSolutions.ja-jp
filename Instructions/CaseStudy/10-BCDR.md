@@ -1,6 +1,6 @@
 ---
 casestudy:
-    title: '正式なケース スタディはありません'
-    module: '事業継続ソリューション'
+  title: 正式なケース スタディなし
+  module: Business continuity solutions
 ---
-このモジュールには、正式なケース スタディは含まれていません。 
+このモジュールには、正式なケース スタディがありません。 

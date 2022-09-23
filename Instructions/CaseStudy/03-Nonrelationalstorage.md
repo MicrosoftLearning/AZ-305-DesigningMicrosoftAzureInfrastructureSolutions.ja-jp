@@ -1,44 +1,42 @@
 ---
 casestudy:
-    title: '非リレーショナル ストレージ ソリューションの設計'
-    module: 'ノンリレーショナル ストレージ ソリューション'
+  title: 非リレーショナル ストレージ ソリューションを設計する
+  module: Non-relational storage solutions
 ---
-# 非リレーショナル ストレージ の ケース スタディを設計する
+# <a name="design-non-relational-storage-case-study"></a>非リレーショナル ストレージ ケース スタディを設計する
 
-推定時間: 90 分
+## <a name="requirements"></a>要件
 
-## 要件
-
-Tailwind Traders は、重複するコンテンツを削減し、該当する場合はいつでもクラウドに移行することで、ストレージ コストを削減したいと考えています。メディア ファイルやマーケティング資料を閲覧する顧客に対して、世界中のアクセスを提供しながら、メンテナンスを一元化するソリューションを求めています。さらに、会社のデータ ファイルの格納に対処したいと考えています。 
+Tailwind Traders wants to reduce storage costs by reducing duplicate content and, whenever applicable, migrating it to the cloud. They would like a solution that centralizes maintenance while still providing world-wide access for customers who browse media files and marketing literature. Additionally, they would like to address the storage of company data files. 
 
 ![非リレーショナル ストレージ アーキテクチャ](media/Nonrelational%20storage.png)
 
  
 
-* **メディア ファイル**。メディア ファイルには、自社の公開ウェブサイトに表示される製品写真や特集ビデオが含まれており、社内で開発および管理されています。顧客がアイテムを参照すると、対応するメディア ファイルが表示されます。メディア ファイルには様々な形式がありますが、　JPEG と MP4 が最も一般的です。 
+* <bpt id="p1">**</bpt>Media files<ept id="p1">**</ept>. Media files include product photos and feature videos that are displayed on the company’s public website, which is developed and maintained in house. When a customer browses to an item, the corresponding media files are displayed. The media files are in different formats, but JPEG and MP4 are the most common. 
 
-* **マーケティング資料**。マーケティング資料には、顧客のストーリー、販促チラシ、サイズ一覧表、環境に配慮した製造情報が含まれます。社内のマーケティング ユーザーは、 Windows ワークステーション上のマップされたドライブを介して資料にアクセスします。顧客は、同社の公開ウェブサイトから直接資料にアクセスします。
+* <bpt id="p1">**</bpt>Marketing literature<ept id="p1">**</ept>. The marketing literature includes customer stories, sales flyers, sizing charts, and eco-friendly manufacturing information. Internal marketing users access the literature via a mapped drive on their Windows workstations. Customers access the literature directly from the company’s public website.
 
-* **企業文書**。これらは人事や財務などの部門の社内文書です。これらの文書は、社内で開発された Web アプリケーションを介してアクセスおよび管理されます。様々な文書が、法的に一定の期間保持する必要があります。法律上または人事の問題を調査する場合、文書の長期間の保持が必要となる場合もあります。  1 年以上経過しているほとんどの企業文書は、コンプライアンス上の理由でのみ保持され、アクセスされることはほとんどありません。
+* <bpt id="p1">**</bpt>Corporate documents<ept id="p1">**</ept>. These are internal documents for departments such as human resources and finance. These documents are accessed and managed via an internally developed web application. Legal requires that various documents be retained for a specific period of time. Occasionally documents will need to be maintained longer when legal or HR issues are being investigated. Most corporate documents older than one year are only kept for compliance reasons and are seldom accessed.
 
-* **ファイルの場所**。すべてのファイルは、本社のデータ センターにローカルに保存されます。部門または製品ライン別に整理された多数のファイル共有があります。データ サーバーは、 Web サイトのファイルを提供するのに悪戦苦闘しています。ピーク時にはウェブサイトのページのレンダリングが遅くなります。 
+* Tailwind Traders では、重複するコンテンツを減らし、必要に応じてクラウドに移行することで、ストレージ コストを削減することが求められています。 
 
-* **ファイル アクセス頻度**。一部の製品はさらに人気があり、そのデータへのアクセス頻度が高くなります。ただし、スキー用具のような一部の製品は、シーズン中にだけアクセスされます。販売イベントは、特定の販売品目に多くの関心を生じます。 
+* 彼らは、メディア ファイルやマーケティング資料を閲覧する顧客に世界規模のアクセスを提供しながら、メンテナンスを一元化するソリューションを望んでいます。 
 
-## タスク
+## <a name="tasks"></a>タスク
 
 1. Tailwind Traders のストレージ ソリューションを設計します。 
 
-      * どのような種類のデータが表されますか? 
+      * どのような種類のデータが表現されますか? 
 
-      * 設計でどのような要素を考慮しますか?
+      * 設計で考慮すべき要素は何ですか?
 
-      * BLOB アクセス階層を使用しますか?
+      * BLOB アクセス層を使用しますか?
 
-      * 不変のストレージを使用しますか?
+      * 不変ストレージを使用しますか?
 
       * コンテンツに安全にアクセスするにはどうすればよいですか?
 
-2.  ソリューションでは、メディア、マーケティング資料、企業ドキュメントを考慮する必要があります。データによって、推奨事項は異なる場合があります。決定について説明できるようにしてください。 
+2.  さらに、彼らは会社のデータ ファイルのストレージに対処したいと考えます。 
 
-十分に設計されたフレームワークの柱をどのように組み込んで、高品質で安定した効率的なクラウドアーキテクチャを生み出していますか?
+高品質で安定した効率的なクラウド アーキテクチャを生み出すには、ウェル アーキテクト フレームワークの要素をどのように組み込みますか?

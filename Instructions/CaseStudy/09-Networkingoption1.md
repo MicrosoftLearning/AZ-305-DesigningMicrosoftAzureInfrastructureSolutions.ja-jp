@@ -1,34 +1,27 @@
----
-casestudy:
-    title: 'ネットワーク ソリューションの設計 - 製品カタログ エンタープライズ アプリケーション'
-    module: 'ネットワーク インフラストラクチャ ソリューション (オプション 1)'
----
-# ネットワーク インフラストラクチャ ソリューションを設計する  
 
-推定時間: 60 分
+# <a name="design-a-network-infrastructure-solution"></a>ネットワーク インフラストラクチャ ソリューションを設計する  
 
-## 要件
+## <a name="requirements"></a>要件
 
-企業のワークロードの一部を Azure に移行する戦略を定義する準備を進めるには、必要なネットワーク コンポーネントを特定し、それらをサポートするために必要なネットワーク インフラストラクチャを設計する必要があります。経営のグローバルな範囲を考慮すると、 Tailwind Traders は、アプリケーションをホストするために複数の Azure リージョンを使用します。
-これらのアプリケーションのほとんどは、インフラストラクチャとデータ サービスに依存しており、Azure にも存在します。Azure に移行された社内アプリケーションは、引き続き、 Tailwind Traders のユーザーがアクセスできる必要があります。Azure に移行されたインターネットに接続するアプリケーションは、社外の顧客が引き続きアクセスできる必要があります。 
+As the Tailwind Traders Enterprise IT team prepares to define the strategy to migrate some of company’s workloads to Azure, it must identify the required networking components and design a network infrastructure necessary to support them. Considering the global scope of its operations, Tailwind Traders will be using multiple Azure regions to host its applications. Most of these applications have dependencies on infrastructure and data services, which will also reside in Azure. Internal applications migrated to Azure must remain accessible to Tailwind Traders users. Internet-facing applications migrated to Azure must remain accessible to any external customer. 
 
-最初のネットワーク設計をまとめるために、 Tailwind Traders エンタープライズ IT チームは、Azure に移行されるワークロードの最も一般的なカテゴリを表す 2 つの主要なアプリケーションを選択しました。  
+最初のネットワーク設計をまとめるために、Tailwind Traders Enterprise IT チームは 2 つの主要なアプリケーションを選択しました。Azure への移行が予想されるワークロードの最も一般的なカテゴリを表しています。  
 
-### 設計 - 製品カタログ エンタープライズ アプリケーション
+### <a name="design---product-catalog-enterprise-application"></a>設計 - 製品カタログエンタープライズ アプリケーション
 
 ![製品カタログのアーキテクチャ](media/catalog.png)
 
-- SQL Server の Always On 可用性グループ データベースでホストされている、製品カタログへのアクセスを提供する、インターネットに接続する Windows ベースの 2 層の .NET Core ベースの ウェブアプリ。このアプリケーションは、99.99%、10分のRPO、 2 時間の RTO の可用性 SLA で、ミッションクリティカルに分類されます。 
+- An internet-facing, Windows-based two-tier .NET Core-based web app providing access to the product catalog, hosted in a SQL Server Always On Availability Group database. This application is categorized as mission-critical, with availability SLA of 99.99%, 10-minute RPO and 2-hour RTO. 
 
--	ビジネスリーダーは、インターネットに接続するアプリにアクセスする際に最適なカスタマー エクスペリエンスの重要性を強調しているので、ウェブページの読み込みと静的コンテンツのダウンロードにかかる時間を最小限に抑えることが重要です。同様に、ウェブ アプリ コンポーネントとその依存関係をホストする個々のサーバーの障害は、顧客が認識するウェブ アプリの可用性にわずかな影響を与える必要があります。地域の障害が既存のウェブ セッションに何らかの中断を引き起こす可能性があることは理解されていますが、障害復旧サイトへのフェールオーバーは自動的に行う必要があります。
+-   Business leads emphasize the importance of the optimal customer experience when accessing internet-facing apps, so it is critical that the time it takes to load web pages and download static content is minimized. Similarly, a failure of individual servers hosting web app components and their dependencies should have negligible impact on the web app availability perceived by customers. While it’s understood that a regional failure might introduce some interruption to existing web sessions, the failover to a disaster recovery site should be automatic.
 
-- Azure PaaS サービスのメリットを活用するために、エンタープライズ IT チームは Azure SQL Database を使用して製品カタログ エンタープライズ アプリケーションのデータベースを実装することに決定しました。 
+- Azure PaaS サービスによって提供される利点を活用するために、Enterprise IT チームは、Azure SQL Database を使用して、製品カタログ エンタープライズ アプリケーションのデータベースを実装することにしました。 
 
-- Tailwind Traders 情報セキュリティチームとリスク チームでは、同じアプリケーションの一部である Azure VM と PaaS サービス間のすべての通信を、PaaS サービスのパブリック エンドポイント経由ではなく、Azure バックボーン経由で行う必要があります。 
+- Tailwind Traders の情報セキュリティ チームとリスク チームは、同じアプリケーションの一部である Azure VM と PaaS サービス間のすべての通信を、PaaS サービスのパブリック エンドポイント経由ではなく、Azure バックボーン経由で移動する必要があります。 
 
-## タスク - 製品カタログ エンタープライズ アプリケーション
+## <a name="tasks---product-catalog-enterprise-application"></a>タスク - 製品カタログエンタープライズ アプリケーション
 
-1. 製品カタログの 2 層ネットワーク ソリューションを設計します。必要に応じて、設計には Azure フロント ドア、WAF、Azure ファイアウォール、および Azure ロード バランサーが含まれる場合があります。ネットワーク コンポーネントは仮想ネットワークにグループ化する必要があり、ネットワーク セキュリティ グループを考慮する必要があります。設計の各コンポーネントを選択した理由を説明する準備をしてください。 
+1. Tailwind Traders Enterprise IT チームは、会社のワークロードの一部を Azure に移行する戦略を定義する準備の際に、必要なネットワーク コンポーネントを特定し、それらをサポートするために必要なネットワーク インフラストラクチャを設計する必要があります。 
 
-十分に設計されたフレームワークの柱をどのように組み込んで、高品質で安定した効率的なクラウドアーキテクチャを生み出していますか?
+高品質で安定した効率的なクラウド アーキテクチャを生み出すには、ウェル アーキテクト フレームワークの要素をどのように組み込みますか?
 
