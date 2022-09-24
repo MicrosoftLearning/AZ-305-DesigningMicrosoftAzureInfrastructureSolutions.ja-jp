@@ -1,14 +1,9 @@
 ---
-title: オンライン ホステッド インストラクション
+title: オンラインでホスティングされている手順
 permalink: index.html
 layout: home
-ms.openlocfilehash: e096bbad394d45cb4fc4b50e3db13c1b5cc70433
-ms.sourcegitcommit: 0398c15157de2f621dd945e76523b824e500901c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2022
-ms.locfileid: "145884056"
 ---
+
 # <a name="content-directory"></a>コンテンツ ディレクトリ
 
 各ケース スタディへのハイパーリンクを次に示します。
