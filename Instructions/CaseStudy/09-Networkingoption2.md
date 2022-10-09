@@ -7,7 +7,7 @@ casestudy:
 
 ## <a name="requirements"></a>要件
 
-As the Tailwind Traders Enterprise IT team prepares to define the strategy to migrate some of company’s workloads to Azure, it must identify the required networking components and design a network infrastructure necessary to support them. Considering the global scope of its operations, Tailwind Traders will be using multiple Azure regions to host its applications. Most of these applications have dependencies on infrastructure and data services, which will also reside in Azure. Internal applications migrated to Azure must remain accessible to Tailwind Traders users. Internet-facing applications migrated to Azure must remain accessible to any external customer. 
+Tailwind Traders Enterprise IT チームは、会社のワークロードの一部を Azure に移行する戦略を定義する準備の際に、必要なネットワーク コンポーネントを特定し、それらをサポートするために必要なネットワーク インフラストラクチャを設計する必要があります。 Tailwind Traders は、その運用のグローバル スコープを考慮して、アプリケーションをホストするために複数の Azure リージョンを使います。 これらのアプリケーションのほとんどは、インフラストラクチャとデータ サービスに依存しており、Azure に配置されます。 Azure に移行される内部アプリケーションは、Tailwind Traders のユーザーが引き続きアクセスできる必要があります。 Azure に移行されるインターネット向けのアプリケーションは、外部のお客様が引き続きアクセスできる必要があります。 
 
 最初のネットワーク設計をまとめるために、Tailwind Traders Enterprise IT チームは 2 つの主要なアプリケーションを選択しました。Azure への移行が予想されるワークロードの最も一般的なカテゴリを表しています。  
 
@@ -19,18 +19,18 @@ As the Tailwind Traders Enterprise IT team prepares to define the strategy to mi
 
 -   このアプリケーションはミッション クリティカルとして分類され、これには可用性 SLA が 99.99% の高可用性プロビジョニングとディザスター リカバリー プロビジョニング (10 分の RPO と 2 時間の RTO) が必要です。
 
--   To provide connectivity to internal apps migrated to Azure, Tailwind Traders will need to establish hybrid connectivity from their on-premises datacenters. The Enterprise IT group already established that such connectivity will be implemented by using ExpressRoute circuit from its main Seattle datacenter, however, at this point it is not clear yet what would be failover solution in case that circuit becomes unavailable. The Tailwind Traders CFO wants to avoid paying for another, redundant ExpressRoute circuit. 
+-   Azure に移行された内部アプリへの接続を提供するには、Tailwind Traders でオンプレミスのデータセンターからハイブリッド接続を確立する必要があります。 Enterprise IT グループは、シアトルの主要データセンターの ExpressRoute 回線を使用してこのような接続を実装することを既に確立していますが、この時点で、回線が使用できなくなった場合のフェールオーバー ソリューションは明確になっていません。 Tailwind Traders CFO は、別の冗長 ExpressRoute 回線の支払いを回避したいと考えています。 
 
-- There are additional considerations that apply to on-premises connectivity to internal apps migrated to Azure. Since the Tailwind Traders Azure environment will consist of multiple subscriptions and, effectively, multiple virtual networks, to minimize cost, it is important to minimize the number of Azure resources required to implement core networking capabilities. Such capabilities include hybrid connectivity to on-premises locations as well as traffic filtering. Incidentally, this need to minimize cost aligns with the Information Security and Risk requirements, which state that all traffic between on-premises locations and Azure virtual networks must flow via a single virtual network, which will be hosting components responsible for hybrid connectivity and traffic filtering. 
+- Azure に移行された内部アプリへのオンプレミス接続に適用される考慮事項が他にもあります。 Tailwind Traders Azure 環境は複数のサブスクリプションで構成され、複数の仮想ネットワークで構成されるのが効果的であるため、コストを最小限に抑えるには、コア ネットワーク機能を実装するために必要な Azure リソースの数を最小限に抑えることが重要です。 このような機能には、オンプレミスの場所へのハイブリッド接続とトラフィック フィルター処理が含まれます。 なお、この場合は情報セキュリティとリスクの要件に沿ってコストを最小限に抑える必要があります。この要件では、オンプレミスの場所と Azure 仮想ネットワーク間のすべてのトラフィックは単一の仮想ネットワークを経由する必要があります。それによってハイブリッド接続とトラフィック フィルタリングを担当するコンポーネントがホストされます。 
 
--   As per requirements defined by the Tailwind Traders Information Security and Risk teams, all communication between Azure VMs in different tiers that are part of the same application must allow only the ports required to run and maintain the application. However, due to IP address space limitations, it might not be possible to allocate dedicated subnets to each tier. Enterprise IT group needs to identify the optimal way to configure source and destination for traffic filtering that would not require directly referencing IP addresses or IP address ranges.
+-   Tailwind Traders の情報セキュリティ チームとリスク チームによって定義されている要件に従って、同じアプリケーションに含まれるさまざまなレベルの Azure VM 間のすべての通信で、アプリケーションの実行と保守に必要なポートのみを許可する必要があります。 ただし、IP アドレス空間の制限により、各層に専用サブネットを割り当てられない場合があります。 Enterprise IT グループは、IP アドレスまたは IP アドレス範囲を直接参照する必要のないトラフィック フィルタリングの送信元と宛先を構成するための最適な方法を特定する必要があります。
 
 
 ## <a name="tasks---bi-enterprise-application"></a>タスク - BI エンタープライズ アプリケーション 
 
-1. Tailwind Traders Enterprise IT チームは、会社のワークロードの一部を Azure に移行する戦略を定義する準備の際に、必要なネットワーク コンポーネントを特定し、それらをサポートするために必要なネットワーク インフラストラクチャを設計する必要があります。 
+1. BI アプリケーション用の 3 層ネットワーク ソリューションを設計します。 設計には、Azure ExpressRoute、VPN Gateway、Application Gateways、Azure Firewall、Azure Load Balancer が含まれる場合があります。 ネットワーク コンポーネントを仮想ネットワークにグループ化し、ネットワーク セキュリティ グループを考慮する必要があります。 ソリューションの各コンポーネントを選択した理由を説明する準備をしてください。 
 
-2. Tailwind Traders は、その運用のグローバル スコープを考慮して、アプリケーションをホストするために複数の Azure リージョンを使います。 
+2. コンピューティング ケース スタディからのアーキテクト ソリューションに基づいて、これはネットワーク設計にどのように影響しますか? 最新化されたアプリケーションへのアクセスをセキュリティで保護するために、追加のネットワーク リソースが必要ですか? 元のネットワーク設計に実装された推奨ソリューションのいくつかはもう必要ありませんか? 
 
 3. ストレージ (リレーショナル) のケース スタディに基づいて、ストレージ アカウントへのアクセスを保護し、選択したユーザーのみがストレージ アカウントに確実にアクセスできるようにするには、ネットワーク設計をどのように更新しますか?
 

@@ -9,21 +9,21 @@ casestudy:
 
 ## <a name="requirements"></a>要件
 
-Tailwind Traders is doing very well and is expanding their workforce. They have successfully acquired an online retailer in the sports apparel space. The company has also located a partner to outsource marketing literature. Tailwind Traders is using Azure Active Directory for user and groups accounts. Here are two specific initiatives the IT department would like you to help with. 
+Tailwind Traders の業績は良好で、従業員を増やしています。 彼らは、スポーツ アパレル スペースのオンライン小売業者を買収しました。 また、マーケティング資料をアウトソーシングするためのパートナーを見つけました。 Tailwind Traders は、ユーザー アカウントとグループ アカウントに Azure Active Directory を使用しています。 IT 部門は、次の具体的な 2 つの取り組みに対して、サポートを必要としています。 
 
 **新しいユーザー アカウント**
 
-  * The online retailer acquisition will add 75 employees to Tailwind Traders. All the new users have on-premises Active Directory Domain Services accounts in the retailer’s existing domain.
+  * オンライン小売業者の買収により、Tailwind Traders の従業員は 75 人増えます。 この小売業者の既存のドメインには、すべての新しいユーザーを対象に、オンプレミスの Active Directory Domain Services アカウントが用意されます。
 
-  * The new marketing partner will initially have 15 employees who will need corporate access. These employees already have Azure AD accounts in the partner’s AAD tenant. 
+  * 新しいマーケティング パートナーの従業員数は 15 人です。彼らには、企業アクセスが必要です。 これらの従業員は既に、パートナーの AAD テナントの Azure AD アカウントを持っています。 
 
-  * The new employees are located at various geographic locations and will need account privileges for their new job roles. Some changes to existing employee roles are expected. 
+  * 新しく従業員となった人々は、地理的にさまざまな場所に配属され、新しい職務でのアカウント特権を必要とします。 既存の従業員ロールに対する変更がいくつか見込まれます。 
 
   * IT 部門は、この機会に、新しい ID セキュリティ機能を導入したいと考えています。 
 
 **新しいアプリケーション アクセス**
 
-  * Tailwind Traders の業績は良好で、従業員を増やしています。 
+  * ビジネス開発チームには、Azure VM 上で実行されているアプリケーションと、Azure SQL データベースに格納されているデータがあります。 Azure SQL データベースのクエリを実行することを VM に安全に許可する必要があります。 
   * アプリケーション コードや構成ファイルに資格情報を格納せずに、安全に SQL データベースにアクセスできるようにするには、オンプレミス サーバーも必要です。
 
 ## <a name="tasks"></a>タスク
@@ -34,9 +34,9 @@ Tailwind Traders is doing very well and is expanding their workforce. They have 
 
   * 新しいパートナー アカウントを追加するプロセスを図で示します。 
 
-  * 彼らは、スポーツ アパレル スペースのオンライン小売業者を買収しました。 
+  * 上記の要件については、使用するツールを必ず含めてください。 提案されたソリューションの利点のうち、3 つ以上を一覧で示します。 
 
-* また、マーケティング資料をアウトソーシングするためのパートナーを見つけました。 
+* Tailwind Traders のユーザー ID ソリューションの改善については、3 つ以上の推奨事項を提示します。 これらの推奨事項を、重要度に従ってランク付けします。 これらの提案の理由を含めます。 
 
 **新しいアプリケーション アクセス**
 

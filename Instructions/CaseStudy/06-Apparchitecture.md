@@ -7,15 +7,15 @@ casestudy:
 
 ## <a name="requirements"></a>要件
 
-Tailwind Traders is looking to update their website to include customer supplied product images in addition to the already existing photos provided by marketing. They believe that having more photos of products in use will give potential customers a better feel for how past customers loved their products after purchasing them. They do have some requirements as outlined below:
+Tailwind Traders は、マーケティング部門が提供する既存の写真に加え、お客様から提供された製品の画像を掲載するために、Web サイトを更新することを検討しています。 使用中の製品の写真を増やせば、これまでにお客様が購入後の製品をどのように愛用していたかを、潜在的なお客様に感じていただきやすくなる、というのが彼らの考えです。 これには、次に示すような要件があります。
 
-* Uploaded images will need to be scanned before getting posted on the website. Legal and Marketing are both requesting that after initial upload, the images be checked for any issues that reflect poorly upon the company or could cause legal issues. An in-house API has already been developed and deployed that can perform the necessary scanning. 
+* アップロードされた画像は、Web サイトへの投稿にあたり、スキャンされたものである必要があります。 法務とマーケティングの両部門は、画像が最初にアップロードされた後、会社の評判の悪化につながる問題や、法的な問題を引き起こしかねない問題がないかどうかについて、画像をチェックすることを要求しています。 必要なスキャンを実行できる社内 API が、既に開発およびデプロイされています。 
 
-* Based on existing patterns, Tailwind Traders expects the image uploads to happen very unevenly throughout the day. Certain periods may experience more uploads than the scanning software can handle, while other periods may experience very few or no uploads.
+* Tailwind Traders は、既存のパターンに基づき、画像のアップロードが 1 日を通して非常に不均等に行われると想定しています。 特定の時間にスキャン ソフトウェアの処理能力を超えるアップロードが発生する一方で、別の時間には、アップロードがほとんど発生しないか、まったく発生しない可能性があります。
 
 * Tailwind Traders は、アップロードされた画像がシステムによってスキャンされ、承認された後、画像の共有に対するお礼のメールをお客様に送信したいと考えています。
 
-* Cost and management of the solution is a concern, especially since Tailwind Traders isn’t sure how popular this feature will be initially. Minimize costs and leverage serverless solutions where possible.
+* 懸念されるのは、このソリューションのコストと管理です。特に、Tailwind Traders では、最初の段階で、この機能がどのくらい普及するかがわかっていません。 コストを最小限に抑え、可能な場合は、サーバーレス ソリューションを活用します。
 
  
 
