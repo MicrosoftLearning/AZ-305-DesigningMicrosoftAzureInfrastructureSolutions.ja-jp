@@ -7,21 +7,21 @@ casestudy:
 
 ## <a name="requirements"></a>要件
 
-Tailwind Traders wants to reduce storage costs by reducing duplicate content and, whenever applicable, migrating it to the cloud. They would like a solution that centralizes maintenance while still providing world-wide access for customers who browse media files and marketing literature. Additionally, they would like to address the storage of company data files. 
+Tailwind Traders では、重複するコンテンツを減らし、必要に応じてクラウドに移行することで、ストレージ コストを削減することが求められています。 彼らは、メディア ファイルやマーケティング資料を閲覧する顧客に世界規模のアクセスを提供しながら、メンテナンスを一元化するソリューションを望んでいます。 さらに、彼らは会社のデータ ファイルのストレージに対処したいと考えます。 
 
 ![非リレーショナル ストレージ アーキテクチャ](media/Nonrelational%20storage.png)
 
  
 
-* <bpt id="p1">**</bpt>Media files<ept id="p1">**</ept>. Media files include product photos and feature videos that are displayed on the company’s public website, which is developed and maintained in house. When a customer browses to an item, the corresponding media files are displayed. The media files are in different formats, but JPEG and MP4 are the most common. 
+* **メディア ファイル**。 メディア ファイルには、社内で開発および保守されている、会社の一般向け Web サイトに表示される製品写真や機能ビデオが含まれています。 顧客がアイテムを参照すると、対応するメディア ファイルが表示されます。 メディア ファイルの形式は異なりますが、JPEG と MP4 が最も一般的です。 
 
-* <bpt id="p1">**</bpt>Marketing literature<ept id="p1">**</ept>. The marketing literature includes customer stories, sales flyers, sizing charts, and eco-friendly manufacturing information. Internal marketing users access the literature via a mapped drive on their Windows workstations. Customers access the literature directly from the company’s public website.
+* **マーケティング資料**。 マーケティング資料には、顧客事例、販売チラシ、サイズ一覧表、環境に優しい製造情報が含まれます。 内部のマーケティング ユーザーは、Windows ワークステーション上のマップされたドライブを介して資料にアクセスします。 顧客は、会社の一般向け Web サイトから直接、資料にアクセスします。
 
-* <bpt id="p1">**</bpt>Corporate documents<ept id="p1">**</ept>. These are internal documents for departments such as human resources and finance. These documents are accessed and managed via an internally developed web application. Legal requires that various documents be retained for a specific period of time. Occasionally documents will need to be maintained longer when legal or HR issues are being investigated. Most corporate documents older than one year are only kept for compliance reasons and are seldom accessed.
+* **会社のドキュメント**。 これらは、人事や財務などの部門における内部ドキュメントです。 これらのドキュメントは、内部で開発された Web アプリケーションを介してアクセスおよび管理されます。 法務では、さまざまなドキュメントを特定の期間保持する必要があります。 法務または人事に関する問題が調査中である場合は、ドキュメントをさらに長く維持することが必要な場合があります。 1 年以上経過した会社のドキュメントはほとんど、コンプライアンス上の理由でのみ保持され、アクセスされることはめったにありません。
 
-* Tailwind Traders では、重複するコンテンツを減らし、必要に応じてクラウドに移行することで、ストレージ コストを削減することが求められています。 
+* **ファイルの場所**。 すべてのファイルは、メイン オフィスのデータ センターにローカルに保存されます。 部門または製品ラインごとに整理されたファイル共有が多数あります。 データ サーバーから、Web サイトへのファイルの提供に困難が生じています。 ピーク時に、Web サイトのページのレンダリングが遅くなります。 
 
-* 彼らは、メディア ファイルやマーケティング資料を閲覧する顧客に世界規模のアクセスを提供しながら、メンテナンスを一元化するソリューションを望んでいます。 
+* **ファイル アクセスの頻度**。 一部の製品はより一般的であり、データへのアクセス頻度が高くなります。 ただし、スキー用具などの一部の製品は、そのシーズンにのみアクセスされます。 販売イベントによって、特定の販売アイテムに多くの関心が呼び起されます。 
 
 ## <a name="tasks"></a>タスク
 
@@ -37,6 +37,6 @@ Tailwind Traders wants to reduce storage costs by reducing duplicate content and
 
       * コンテンツに安全にアクセスするにはどうすればよいですか?
 
-2.  さらに、彼らは会社のデータ ファイルのストレージに対処したいと考えます。 
+2.  ソリューションでは、メディア、マーケティング資料、および会社のドキュメントを考慮する必要があります。 データによって、推奨事項が異なる場合があります。 意思決定について議論できるように準備してください。 
 
 高品質で安定した効率的なクラウド アーキテクチャを生み出すには、ウェル アーキテクト フレームワークの要素をどのように組み込みますか?

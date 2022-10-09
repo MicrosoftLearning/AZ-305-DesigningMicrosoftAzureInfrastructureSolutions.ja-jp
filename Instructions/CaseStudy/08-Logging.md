@@ -9,29 +9,29 @@ casestudy:
 
 **このケース スタディでは、次のモジュールとケース スタディを完了している必要があります: コンピューティング、リレーショナル データ、非リレーショナル データ、認証、アプリケーション アーキテクチャ**
 
-You have taken a new position with Fabrikam Residences, which is very successful and is experiencing rapid growth. Fabrikam Residences is a building contractor for new homes and major home renovations and have become successful by providing quality buildings and offering newer integrated home technologies than their competitors.  
+あなたは Fabrikam Residences で新たな職位に就き、大きな成功を収めて、急速に成長しています。 Fabrikam Residences は、新築住宅や大掛かりな住宅改築のための建築請負業者であり、高品質の建物を提供し、競合他社よりも新しい統合ホーム テクノロジを提供することで成功を収めています。  
 
-Currently these technologies are provided and managed by separate sub-contract companies. The owners of Fabrikam Residences want to begin offering these upgraded technology options in-house to provide better quality, support and data on customer patterns and needs. 
+現在、これらのテクノロジは個別の下請会社によって提供および管理されています。 Fabrikam Residences の所有者は、より良い品質、サポート、および顧客のパターンとニーズに関するデータを提供するために、これらのアップグレード済みのテクノロジ オプションを社内で提供し始めたいと考えています。 
  
-Initially, the company wants to offer HVAC (heating and cooling) control and monitoring, security system monitoring and alerts, and home automation. This will require a new website, data storage solution and data ingestion solution.
+同社はまず、HVAC (冷暖房) の制御と監視、セキュリティ システムの監視とアラート、およびホーム オートメーションを提供したいと考えています。 これには、新しい Web サイト、データ ストレージ ソリューション、およびデータ インジェスト ソリューションが必要になります。
 
-The company has seen tremendous growth over the past 2 years. The company is estimating it may double in size over the next 12-18 months. With such rapid growth in the regional market, the company has no current plans to expand outside of the regional market.
+同社は過去 2 年間で大きな成長を遂げてきました。 今後 12 から 18 か月間で会社が 2 倍の規模になる可能性があると見積もっています。 このような地域市場の急速な成長により、同社は現在のところ、地域市場の外に拡大する計画はありません。
 
 ## <a name="current-situation"></a>現在の状況
 
-The Fabrikam Headquarters operates a small datacenter in a single location. The datacenter hosts the company <bpt id="p1">**</bpt>Project Management (PM) software<ept id="p1">**</ept>.
+Fabrikam 本社は、小規模なデータセンターを 1 か所で運用しています。 このデータセンターでは、会社の**プロジェクト管理 (PM) ソフトウェア**がホストされています。
 
 ![プロジェクト管理ソフトウェアのアーキテクチャ](media/fabrikam.png)
 
-- あなたは Fabrikam Residences で新たな職位に就き、大きな成功を収めて、急速に成長しています。  
+- PM ソフトウェアでは、サードパーティ製の Windows アプリケーションが使用されています。 このアプリケーションは、単一の Microsoft SQL Server バックエンドを持つ 2 ノードのネットワーク負荷分散 (NLB) クラスターで実行されます。  
 
 - 画像とドキュメントは、専用の NAS アプライアンスに存在するサーバーのマップ済みドライブに格納されます。
 
 - 企業ユーザー (オフィス スタッフ) は、Web フロントエンドを使用して、配送スケジュールや変更オーダーなどのデータを入力します。
 
--   Fabrikam Residences は、新築住宅や大掛かりな住宅改築のための建築請負業者であり、高品質の建物を提供し、競合他社よりも新しい統合ホーム テクノロジを提供することで成功を収めています。
+-   現場監督者は、Windows ノート PC やタブレットをオフラインで使用して、建築の進捗状況やその他の詳細を継続的に記録します。  これらの変更 (新しい作業指示書など) は、ローカルの変更ファイルに格納されます。  毎日の終わりに、監督者はオフィスに戻ってワイヤレス ネットワークに接続し、小さなスクリプトを実行して変更ファイルを FTP サーバーにアップロードします。  2 つ目のスクリプトは、すべての変更ファイルを処理し、その内容をプロジェクト管理データベース (Microsoft SQL Server) に入力するために、毎晩実行されるようにスケジュールされています。
 
-The <bpt id="p1">**</bpt>Home Technology software<ept id="p1">**</ept> is currently provided and hosted by third parties and involves at least three different websites the customer must visit.  It is proposed the software be replaced with an in-house developed and unified solution.
+**ホーム テクノロジ ソフトウェア**は現在、サードパーティによって提供およびホストされており、顧客がアクセスする必要がある 3 つ以上の異なるウェブサイトが含まれています。  このソフトウェアを自社開発の統合ソリューションに置き換えることが提案されています。
 
 ![HVAC、セキュリティ、およびオートメーション アプリの図](media/software.png)
 
@@ -41,9 +41,9 @@ The <bpt id="p1">**</bpt>Home Technology software<ept id="p1">**</ept> is curren
 
 - 可能な限り多くのシステムをパブリック クラウド プロバイダーに移行します。
 
-- 現在、これらのテクノロジは個別の下請会社によって提供および管理されています。
+- セキュリティ上の問題が発生したので、既存のスクリプトを置き換えて、FTP よりも安全なシステムを利用します。 また、変更ファイルがアップロードされたらすぐに処理されることが求められています。
 
-- Fabrikam Residences の所有者は、より良い品質、サポート、および顧客のパターンとニーズに関するデータを提供するために、これらのアップグレード済みのテクノロジ オプションを社内で提供し始めたいと考えています。
+- プロジェクト管理データベースの回復性を高めます。 パフォーマンスは問題ではありませんが、会社では、1 つのハードウェア障害が発生した場合にデータベースへのアクセスが失われるのを回避したいと考えています。
 
 **新しいホーム テクノロジ ソリューション**
 
@@ -55,7 +55,7 @@ The <bpt id="p1">**</bpt>Home Technology software<ept id="p1">**</ept> is curren
   - システムはスケーラブルである必要があります。
   - 冗長性は重要です。
   
-- The new unified website will be developed in house and hosted on Linux.  This website will be used to view monitors and change preferences for items such as temperature or alert thresholds. Loads can vary widely, and the system must be able to scale quickly.
+- 新しい統合 Web サイトが社内で開発され、Linux でホストされます。  この Web サイトは、モニターを表示したり、温度やアラートのしきい値などの項目の基本設定を変更したりするために使用されます。 負荷は大きく変化する可能性があり、システムを迅速にスケーリングできる必要があります。
 
 -   別のユーザー アカウントとパスワードを作成せずにシステムにサインインする方法をユーザーに提供します。
 
@@ -63,9 +63,9 @@ The <bpt id="p1">**</bpt>Home Technology software<ept id="p1">**</ept> is curren
 
 ## <a name="tasks"></a>タスク 
 
-1. 同社はまず、HVAC (冷暖房) の制御と監視、セキュリティ システムの監視とアラート、およびホーム オートメーションを提供したいと考えています。
+1. プロジェクト管理ソフトウェアのソリューションを設計します。 設計の各コンポーネントを選択した理由と、それがソリューション要件をどのように満たすかを説明できるようにしておきます。
 
-2. これには、新しい Web サイト、データ ストレージ ソリューション、およびデータ インジェスト ソリューションが必要になります。
+2. 新しいホーム テクノロジ ソリューションのアーキテクチャを設計します。 設計の各コンポーネントを選択した理由と、それがソリューション要件をどのように満たすかを説明できるようにしておきます。
 
 高品質で安定した効率的なクラウド アーキテクチャを生み出すには、ウェル アーキテクト フレームワークの要素をどのように組み込みますか?
 
