@@ -1,20 +1,20 @@
 # <a name="az-305-designing-microsoft-azure-infrastructure-solutions"></a>AZ-305:Microsoft Azure Infrastructure Solutions の設計
 
 - **[ケース スタディへのリンク (HTML 形式)](https://microsoftlearning.github.io/AZ-305-DesigningMicrosoftAzureInfrastructureSolutions/)**
-- <bpt id="p1">**</bpt>Are you a MCT?<ept id="p1">**</ept> - Have a look at our <bpt id="p1">[</bpt>GitHub User Guide for MCTs<ept id="p1">](https://microsoftlearning.github.io/MCT-User-Guide/)</ept>
+- **あなたは MCT ですか?** - [MCT 向けの GitHub ユーザー ガイド](https://microsoftlearning.github.io/MCT-User-Guide/)をご覧ください
 
 ## <a name="course-update---28-january-2022"></a>コースの更新 - 2022 年 1 月 28 日
 
-- The Fabrikam Residences case study is now the Module 8 case study. This ensures the end of Day 3 has a case study. This case study reviews and covers all the content up to this point in the course. 
-- The Network Option 1 case study was removed. There is now only one Network case study - BI Enterprise Application. 
+- Fabrikam Residences のケース スタディは、モジュール 8 のケース スタディになりました。 これにより、3 日目の終了にケース スタディが確実に含まれるようにします。 このケース スタディでは、コース内のこの時点までのすべてのコンテンツをレビューし、カバーします。 
+- ネットワーク オプション 1 のケース スタディは削除されました。 ネットワークのケース スタディは、BI エンタープライズ アプリケーションの 1 つだけになりました。 
 
 ## <a name="what-are-we-doing"></a>ここでの内容
 
-**あなたは MCT ですか?**
+このコースをサポートするには、コースで使用される Azure サービスを最新の状態に保つために、コース コンテンツを頻繁に更新する必要があります。  コース作成者と MCT の間でオープンに貢献しあい、Azure プラットフォームの変更に合わせてコンテンツを最新の状態に保つために、GitHub でケース スタディを公開しています。
 
 ## <a name="how-should-i-use-these-files-relative-to-the-released-moc-files"></a>リリースされた MOC のファイルに対してこれらのファイルを使用する方法
 
-- - [MCT 向けの GitHub ユーザー ガイド](https://microsoftlearning.github.io/MCT-User-Guide/)をご覧ください 
+- 講師ハンドブックと PowerPoint は、引き続きコースのコンテンツを教えるための主要なソースになるでしょう。 **提案されたインストラクター ソリューションを含むケース スタディ配布資料もあります**。 
 
 - 講師は、ラボを行うたびに、最新の Azure サービスに合わせて修正された箇所がないか GitHub を確認し、最新のラボ用ファイルを取得してください。
 
@@ -26,10 +26,10 @@
 
 - MCT は、GitHub リポジトリのコードまたはコンテンツに pull request を送信できます。Microsoft とコースの作成者は、必要に応じてコンテンツと変更をトリアージして含めます。
 
-- You can submit bugs, changes, improvement and ideas.  Find a new Azure feature before we have?  Submit a new demo!
+- バグ、変更、改善、アイデアを送信できます。  新しい Azure 機能を先に見つけたら、  新しいデモを送信してください!
 
 ## <a name="notes"></a>Notes
 
 ### <a name="classroom-materials"></a>コース資料
 
-It is strongly recommended that MCTs and Partners access these materials and in turn, provide them separately to students.  Pointing students directly to GitHub to access steps as part of an ongoing class will require them to access yet another UI as part of the course, contributing to a confusing experience for the student. An explanation to the student regarding why they are receiving separate  instructions can highlight the nature of an always-changing cloud-based interface and platform. Microsoft Learning support for accessing files on GitHub and support for navigation of the GitHub site is limited to MCTs teaching this course only.
+MCT とパートナーが、これらの資料にアクセスし、学生に個別に提供することを強く推奨します。  開催中のクラスの一環として、受講者に直接 GitHub にアクセスしてもらう手順は、コースの一部で別の UI を扱わなければならず、受講者にとっては混乱を招くことになります。 なぜ別の手順が必要なのかを受講生に説明することで、常に変化するクラウドベースのインターフェイスとプラットフォームの性質を強調することができます。 GitHub 上のファイルにアクセスするための Microsoft Learning サポートと GitHub サイトのナビゲーションのサポートは、このコースを教える MCT のみに限定されています。
