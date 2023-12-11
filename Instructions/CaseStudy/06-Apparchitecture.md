@@ -3,9 +3,9 @@ casestudy:
   title: アプリのアーキテクチャ ソリューションを設計する
   module: App architecture solutions
 ---
-# <a name="design-an-app-architecture-solution"></a>アプリのアーキテクチャ ソリューションを設計する
+# アプリのアーキテクチャ ソリューションを設計する
 
-## <a name="requirements"></a>要件
+## 必要条件
 
 Tailwind Traders は、マーケティング部門が提供する既存の写真に加え、お客様から提供された製品の画像を掲載するために、Web サイトを更新することを検討しています。 使用中の製品の写真を増やせば、これまでにお客様が購入後の製品をどのように愛用していたかを、潜在的なお客様に感じていただきやすくなる、というのが彼らの考えです。 これには、次に示すような要件があります。
 
@@ -19,11 +19,11 @@ Tailwind Traders は、マーケティング部門が提供する既存の写真
 
  
 
-![アプリのアーキテクチャ](media/Apparchitecture.png)
+![アプリ アーキテクチャ](media/Apparchitecture.png)
 
  
 
-## <a name="task"></a>タスク
+## タスク
 
 会社の Web サイトに追加されるお客様の画像を対象とするアーキテクチャを設計します。 
 
