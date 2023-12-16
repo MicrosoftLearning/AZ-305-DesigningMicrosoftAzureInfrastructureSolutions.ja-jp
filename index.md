@@ -4,11 +4,11 @@ permalink: index.html
 layout: home
 ---
 
-# <a name="content-directory"></a>コンテンツ ディレクトリ
+# コンテンツ ディレクトリ
 
 各ケース スタディへのハイパーリンクを次に示します。
 
-## <a name="case-studies"></a>ケース スタディ
+## ケース スタディ
 
 {% assign casestudy = site.pages | where_exp:"page", "page.url contains '/Instructions/CaseStudy'" %}
 | モジュール | ケース スタディ |
