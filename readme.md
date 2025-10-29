@@ -1,5 +1,3 @@
-**⚠️ This GitHub repo will retire on 31st October 2025.**
-
 #README
 
 We've turned off the ability to report issues directly on this repo and do not monitor PRs.
