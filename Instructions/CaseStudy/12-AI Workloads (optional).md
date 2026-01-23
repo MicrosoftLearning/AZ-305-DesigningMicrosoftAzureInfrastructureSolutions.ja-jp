@@ -25,7 +25,9 @@ Tailwind Traders は、いくつかの一般的なエンタープライズ AI �
 
 ## 要件
 
-「[AI 戦略を作成する - クラウド導入フレームワーク](https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/ai/strategy)」ガイダンスを確認し、ビジネス上の各課題に Azure AI ソリューションを一致させます。 各選択肢について、その製品が最適な理由を簡単に説明します。
+- [AI 戦略を作成する - クラウド導入フレームワーク](https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/ai/strategy) ガイダンスを確認します。
+- 各ビジネス課題を Azure AI ソリューションに一致させます。
+- 各選択肢について、その製品が最適な理由を簡単に説明します。
 
 > [!IMPORTANT]
 > **ここで中断して話し合いましょう – 解決策を次に示します**
